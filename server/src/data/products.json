@@ -1,0 +1,123 @@
+{
+  "exports": [
+    {
+      "id": 1,
+      "name": "Shrimps",
+      "category": "Seafood",
+      "image": "https://i.pinimg.com/1200x/74/78/7a/74787a78cf93e23e78820550d4f9e80e.jpg",
+      "description": "High-quality shrimps for international markets",
+      "destinations": ["Global Markets"],
+      "specifications": {
+        "quality": "Premium Grade A",
+        "certifications": ["ISO Standards", "Ministry of Fisheries"],
+        "packaging": "As Per Requirements"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Crabs",
+      "category": "Seafood",
+      "image": "https://i.pinimg.com/1200x/bc/38/d2/bc38d2e91433622d57e9a3afa791bda5.jpg",
+      "description": "Premium crabs sourced from local fisheries",
+      "destinations": ["Global Markets"],
+      "specifications": {
+        "quality": "Premium Grade A",
+        "certifications": ["ISO Standards", "Ministry of Fisheries"],
+        "packaging": "As Per Requirements"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Fish & Eels",
+      "category": "Seafood",
+      "image": "https://i.pinimg.com/1200x/57/be/26/57be2699525738e2d1a87d0338dd4e49.jpg",
+      "description": "A grade, sourced locally.",
+      "destinations": ["Global Markets"],
+      "specifications": {
+        "quality": "Premium Grade A",
+        "certifications": ["ISO Standards", "Ministry of Fisheries"],
+        "packaging": "As Per Requirements"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Custom Order",
+      "category": "Seafood",
+      "image": "https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=400",
+      "description": "Any other varieties of seafood you need we can source.",
+      "destinations": ["Global Markets"],
+      "specifications": {
+        "quality": "Premium Grade A",
+        "certifications": ["ISO Standards", "Ministry of Fisheries"],
+        "packaging": "As Per Requirements"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Clothes & Accessories",
+      "category": "Garments Products",
+      "image": "https://images.unsplash.com/photo-1600201319331-27d31ecd7850?w=400",
+      "description": "A grade, Manufactured locally.",
+      "destinations": ["Global Markets"],
+      "specifications": {
+        "quality": "Premium Grade A",
+        "certifications": ["ISO Standards"],
+        "packaging": "As Per Requirements"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Leather Accessories",
+      "category": "Leather Products",
+      "image": "https://i.pinimg.com/1200x/bd/06/26/bd06267cb96b391422d07316b269fa16.jpg",
+      "description": "A grade, Manufactured locally.",
+      "destinations": ["Global Markets"],
+      "specifications": {
+        "quality": "Premium Grade A",
+        "certifications": ["ISO Standards"],
+        "packaging": "As Per Requirements"
+      }
+    }
+  ],
+  "imports": [
+    {
+      "id": 8,
+      "name": "Disposable Items",
+      "category": "Health & Care",
+      "image": "https://i.pinimg.com/736x/95/ab/ce/95abceb5ba41434af86f801e85608635.jpg",
+      "description": "Medical appliances, primarily disposables.",
+      "origins": ["Germany", "Japan", "South Korea", "China"],
+      "specifications": {
+        "quality": "Industrial Grade",
+        "certifications": ["ISO Standards"],
+        "warranty": "On Discussion"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Threads & Cotton",
+      "category": "Garments Products",
+      "image": "https://i.pinimg.com/736x/18/63/e5/1863e5c9a44468978dc535d03490e484.jpg",
+      "description": "Materials for manufacturers",
+      "origins": ["China", "Taiwan", "Singapore", "India"],
+      "specifications": {
+        "quality": "Industrial Grade",
+        "certifications": ["ISO Standards"],
+        "warranty": "On Discussion"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Bike Accessories",
+      "category": "Riding Appliances",
+      "image": "https://i.pinimg.com/736x/16/1f/24/161f24f1f873171240e58fe2847d7fa6.jpg",
+      "description": "Longlasting materials with quality assurances and ceritifications.",
+      "origins": ["Various Global Sources"],
+      "specifications": {
+        "quality": "A Grade",
+        "certifications": ["Quality Tested", "Certified"],
+        "packaging": "On discussion"
+      }
+    }
+  ]
+}
