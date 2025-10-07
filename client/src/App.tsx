@@ -30,7 +30,7 @@ const App: React.FC = () => {
         setLoading(true);
         console.log('📄 Attempting to fetch from backend...');
         
-        const response = await fetch('http://localhost:5000/api/products', {
+        const response = await fetch('/api/products', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
