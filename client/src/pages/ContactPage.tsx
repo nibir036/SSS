@@ -224,7 +224,7 @@ const ContactPage: React.FC = () => {
                   <p>House no. kha-215, kha-215/1, Pragati Sharani,</p>
                   <p>Merul Badda, Dhaka, Bangladesh</p>
                   <p className="flex items-center mt-2"><Phone className="w-4 h-4 mr-2" /> +880 1716942018</p>
-                  <p className="flex items-center"><Mail className="w-4 h-4 mr-2" /> info@ssssoilengineer.com</p>
+                  <p className="flex items-center"><Mail className="w-4 h-4 mr-2" /> info@ssssoilengineer.cloud</p>
                 </div>
               </div>
             </div>
@@ -269,14 +269,14 @@ const ContactPage: React.FC = () => {
                   <Mail className="w-5 h-5 mr-3" />
                   <div>
                     <p className="font-semibold">Business Inquiries</p>
-                    <p>business@ssssoilengineer.com</p>
+                    <p>info@ssssoilengineer.cloud</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Globe className="w-5 h-5 mr-3" />
                   <div>
                     <p className="font-semibold">Export Department</p>
-                    <p>export@ssssoilengineer.com</p>
+                    <p>info@ssssoilengineer.com</p>
                   </div>
                 </div>
               </div>

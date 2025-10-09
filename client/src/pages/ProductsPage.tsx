@@ -78,7 +78,7 @@ const ProductsPage: React.FC<ProductPageProps> = ({
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group cursor-pointer"
                 onClick={() => openModal(product)}
               >
-                <div className="h-48 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                <div className="h-100 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                      style={{ backgroundImage: `url(${product.image})` }}>
                 </div>
                 <div className="p-6">
