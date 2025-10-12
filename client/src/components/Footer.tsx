@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
-                info@ssssoilengineer.cloud
+                info@ssssoilengineers.cloud
               </li>
             </ul>
           </div>
