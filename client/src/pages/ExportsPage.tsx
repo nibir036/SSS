@@ -1,10 +1,14 @@
-// ExportsPage.tsx with Auto-Scrolling Hero (Zoom Animation)
+// ExportsPage.tsx with Auto-Scrolling Hero + Animated Product Images (Fixed)
 import React, { useState, useEffect } from 'react';
 import { Ship, Globe, Award, TrendingUp, CheckCircle } from 'lucide-react';
 import { PageProps } from '../types';
 
 const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [seafoodImageIndex, setSeafoodImageIndex] = useState(0);
+  const [garmentsImageIndex, setGarmentsImageIndex] = useState(0);
+  const [leatherImageIndex, setLeatherImageIndex] = useState(0);
+  const [homeImageIndex, setHomeImageIndex] = useState(0);
 
   // Smooth scroll handler for navigation
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, sectionId: string) => {
@@ -25,7 +29,7 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
       subtitle: "Exporting to 50+ countries worldwide"
     },
     {
-      url: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=1200",
+      url: "/fresh-marine-products.jpg",
       title: "Premium Seafood",
       subtitle: "Fresh from Bangladesh waters to global tables"
     },
@@ -41,12 +45,70 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
     }
   ];
 
-  // Auto-advance carousel with zoom effect
+  // Product category images
+  const seafoodImages = [
+    "https://images.unsplash.com/photo-1710348586462-58659947dcc4?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1674066621842-8c830e392618?w=800&h=600&fit=crop",
+    "https://img.freepik.com/premium-photo/selective-focus-giant-mud-crab-market_1048944-12848290.jpg?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1535140728325-a4d3707eee61?w=800&h=600&fit=crop"
+  ];
+
+  const garmentsImages = [
+    "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop",
+    // "https://images.unsplash.com/photo-1558769132-cb1aea0b6e23?w=800&h=600&fit=crop"
+  ];
+
+  const leatherImages = [
+    "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?w=800&h=600&fit=crop"
+  ];
+
+  const homeImages = [
+    "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&h=600&fit=crop",
+    // "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+  ];
+
+  // Auto-advance hero carousel with zoom effect
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % exportImages.length);
     }, 6000);
     return () => clearInterval(timer);
+  }, []);
+
+  // Auto-rotate product images with different intervals
+  useEffect(() => {
+    const seafoodTimer = setInterval(() => {
+      setSeafoodImageIndex((prev) => (prev + 1) % seafoodImages.length);
+    }, 4000);
+    return () => clearInterval(seafoodTimer);
+  }, []);
+
+  useEffect(() => {
+    const garmentsTimer = setInterval(() => {
+      setGarmentsImageIndex((prev) => (prev + 1) % garmentsImages.length);
+    }, 4500);
+    return () => clearInterval(garmentsTimer);
+  }, []);
+
+  useEffect(() => {
+    const leatherTimer = setInterval(() => {
+      setLeatherImageIndex((prev) => (prev + 1) % leatherImages.length);
+    }, 5000);
+    return () => clearInterval(leatherTimer);
+  }, []);
+
+  useEffect(() => {
+    const homeTimer = setInterval(() => {
+      setHomeImageIndex((prev) => (prev + 1) % homeImages.length);
+    }, 5500);
+    return () => clearInterval(homeTimer);
   }, []);
 
   return (
@@ -60,7 +122,7 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
         </div>
 
         {/* Auto-Scrolling Hero Section with Zoom Animation */}
-        <div className="mb-16 rounded-lg overflow-hidden shadow-xl relative h-[500px] md:h-[600px]">
+        <div className="mb-16 rounded-lg overflow-hidden shadow-xl relative h-[500px] md:h-[800px]">
           {exportImages.map((image, index) => (
             <div
               key={index}
@@ -129,17 +191,28 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
               </div>
             </div>
 
-            {/* Products Content */}
+            {/* Products Content with Animated Images */}
             <div className="flex-1 space-y-12">
-              {/* Seafood - Image Left */}
+              {/* Seafood - Fade Animation */}
               <div id="seafood" className="bg-blue-50 rounded-lg overflow-hidden scroll-mt-24">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-2/5">
-                    <img 
-                      src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=600&fit=crop" 
-                      alt="Fresh Seafood"
-                      className="w-full h-64 md:h-full object-cover"
-                    />
+                  <div className="md:w-2/5 h-64 md:h-auto relative">
+                    <div className="w-full h-full relative overflow-hidden">
+                      {seafoodImages.map((img, index) => (
+                        <div 
+                          key={index}
+                          className={`absolute inset-0 transition-opacity duration-1000 ${
+                            index === seafoodImageIndex ? 'opacity-100' : 'opacity-0'
+                          }`}
+                        >
+                          <img 
+                            src={img}
+                            alt={`Seafood ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   <div className="md:w-3/5 p-8">
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">Seafood</h3>
@@ -150,22 +223,36 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
                       quality. Our product range includes fresh crabs harvested from pristine waters, various 
                       species of fish including eels, and a diverse selection of other seafood delicacies. 
                       Each product undergoes rigorous quality control to ensure it meets international food 
-                      safety standards. Our seafood is processed in state-of-the-art facilities and delivered 
-                      fresh to global markets, maintaining the highest standards of hygiene and preservation.
+                      safety standards.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Garments - Image Right */}
+              {/* Garments - Slide Animation */}
               <div id="garments" className="bg-green-50 rounded-lg overflow-hidden scroll-mt-24">
                 <div className="flex flex-col md:flex-row-reverse">
-                  <div className="md:w-2/5">
-                    <img 
-                      src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&h=600&fit=crop" 
-                      alt="Quality Garments"
-                      className="w-full h-64 md:h-full object-cover"
-                    />
+                  <div className="md:w-2/5 h-64 md:h-auto relative">
+                    <div className="w-full h-full relative overflow-hidden">
+                      {garmentsImages.map((img, index) => (
+                        <div 
+                          key={index}
+                          className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
+                            index === garmentsImageIndex 
+                              ? 'translate-x-0' 
+                              : index < garmentsImageIndex 
+                                ? '-translate-x-full' 
+                                : 'translate-x-full'
+                          }`}
+                        >
+                          <img 
+                            src={img}
+                            alt={`Garments ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   <div className="md:w-3/5 p-8">
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">Garments</h3>
@@ -175,23 +262,34 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
                       garments range from casual wear to formal attire, all manufactured with precision and 
                       attention to detail. We work with premium textiles sourced from trusted suppliers, ensuring 
                       that every piece meets the highest quality standards. Our collection includes a wide variety 
-                      of accessories that complement our garment line, as well as trending fashion items that 
-                      appeal to diverse global markets. With modern manufacturing facilities and skilled artisans, 
-                      we deliver products that combine traditional craftsmanship with contemporary design aesthetics.
+                      of accessories that complement our garment line.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Leather Products - Image Left */}
+              {/* Leather Products - Scale Animation */}
               <div id="leather-products" className="bg-purple-50 rounded-lg overflow-hidden scroll-mt-24">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-2/5">
-                    <img 
-                      src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&h=600&fit=crop" 
-                      alt="Leather Products"
-                      className="w-full h-64 md:h-full object-cover"
-                    />
+                  <div className="md:w-2/5 h-64 md:h-auto relative">
+                    <div className="w-full h-full relative overflow-hidden">
+                      {leatherImages.map((img, index) => (
+                        <div 
+                          key={index}
+                          className={`absolute inset-0 transition-all duration-1000 ${
+                            index === leatherImageIndex 
+                              ? 'opacity-100 scale-100' 
+                              : 'opacity-0 scale-110'
+                          }`}
+                        >
+                          <img 
+                            src={img}
+                            alt={`Leather ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   <div className="md:w-3/5 p-8">
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">Leather Products</h3>
@@ -201,25 +299,34 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
                       footwear designed for comfort and durability, stylish bags and accessories that blend 
                       functionality with fashion, and custom items tailored to meet specific client requirements. 
                       Each leather product is crafted with meticulous attention to detail, from the selection of 
-                      raw materials to the final finishing touches. Our manufacturing process adheres to 
-                      international environmental and ethical standards, ensuring that every product not only 
-                      meets quality expectations but also reflects our commitment to responsible production 
-                      practices. Whether it's formal footwear, casual bags, or bespoke leather accessories, 
-                      our products are designed to stand the test of time.
+                      raw materials to the final finishing touches.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Home Products - Image Right */}
+              {/* Home Products - Blur Transition */}
               <div id="home-products" className="bg-orange-50 rounded-lg overflow-hidden scroll-mt-24">
                 <div className="flex flex-col md:flex-row-reverse">
-                  <div className="md:w-2/5">
-                    <img 
-                      src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&h=600&fit=crop" 
-                      alt="Home Products"
-                      className="w-full h-64 md:h-full object-cover"
-                    />
+                  <div className="md:w-2/5 h-64 md:h-auto relative">
+                    <div className="w-full h-full relative overflow-hidden">
+                      {homeImages.map((img, index) => (
+                        <div 
+                          key={index}
+                          className={`absolute inset-0 transition-all duration-1000 ${
+                            index === homeImageIndex 
+                              ? 'opacity-100 blur-0' 
+                              : 'opacity-0 blur-sm'
+                          }`}
+                        >
+                          <img 
+                            src={img}
+                            alt={`Home Products ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   <div className="md:w-3/5 p-8">
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">Home Products</h3>
@@ -229,11 +336,7 @@ const ExportsPage: React.FC<PageProps> = ({ setCurrentPage }) => {
                       combine aesthetic appeal with practical utility, perfect for both everyday use and special 
                       occasions. Our decorative items range from contemporary pieces to traditional designs, 
                       each carefully selected to add character to any home. We take special pride in our 
-                      handicrafts, which showcase the rich cultural heritage and skilled artistry of Bangladeshi 
-                      craftspeople. These handmade items tell stories of tradition and creativity. Additionally, 
-                      our furnishings collection includes textiles and home accessories that blend comfort with 
-                      style. Every product in our home category is chosen for its quality, durability, and 
-                      ability to enhance living spaces with warmth and personality.
+                      handicrafts, which showcase the rich cultural heritage and skilled artistry.
                     </p>
                   </div>
                 </div>
