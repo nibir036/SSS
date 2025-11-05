@@ -12,7 +12,8 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Globe className="h-8 w-8 text-blue-400" />
+              {/* <Globe className="h-8 w-8 text-blue-400" /> */}
+              <img src="/rsz_logo.png" alt="Logo" className="h-10 w-10" />
               <span className="text-xl font-bold">SSS Soil Engineer's</span>
             </div>
             <p className="text-gray-300 mb-4">

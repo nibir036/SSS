@@ -5,6 +5,11 @@ import AboutPage from './pages/AboutPage';
 import ProductsPage from './pages/ProductsPage';
 import CertificationsPage from './pages/CertificationsPage';
 import ContactPage from './pages/ContactPage';
+import ContractsTendersPage from './pages/ContractsTendersPage';
+import ConstructionPage from './pages/ConstructionPage';
+import ImportsPage from './pages/ImportsPage';
+import ExportsPage from './pages/ExportsPage';
+import CustomisedImportsPage from './pages/CustomisedImportsPage';
 import Footer from './components/Footer';
 import ProductModal from './components/ProductModal';
 import { Product, ProductsData } from './types';
@@ -94,6 +99,19 @@ const App: React.FC = () => {
         return <CertificationsPage />;
       case 'contact': 
         return <ContactPage />;
+      
+      // Service Pages
+      case 'contracts-tenders':
+        return <ContractsTendersPage setCurrentPage={setCurrentPage} />;
+      case 'construction':
+        return <ConstructionPage setCurrentPage={setCurrentPage} />;
+      case 'imports':
+        return <ImportsPage setCurrentPage={setCurrentPage} />;
+      case 'exports':
+        return <ExportsPage setCurrentPage={setCurrentPage} />;
+      case 'customised-imports':
+        return <CustomisedImportsPage setCurrentPage={setCurrentPage} />;
+      
       default: 
         return <HomePage {...commonProps} />;
     }

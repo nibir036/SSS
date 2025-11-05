@@ -139,7 +139,7 @@ export const fallbackProductsData: ProductsData = {
 
 export const carouselImages: CarouselImage[] = [
   {
-    url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200",
+    url: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=1200",
     title: "Global Trade Excellence",
     subtitle: "Connecting markets worldwide with premium products"
   },
@@ -149,8 +149,13 @@ export const carouselImages: CarouselImage[] = [
     subtitle: "Sourcing and delivering the finest goods globally"
   },
   {
-    url: "https://images.unsplash.com/39/lIZrwvbeRuuzqOoWJUEn_Photoaday_CSD%20%281%20of%201%29-5.jpg?w=1200",
+    url: "/construction/image7.jpg",
     title: "Trusted Partnership",
     subtitle: "Building lasting relationships across continents"
+  },
+  {
+    url: "/construction/image8.jpg",
+    title: "Reliable Services",
+    subtitle: "Satisfying clients with exceptional solutions"
   }
 ];

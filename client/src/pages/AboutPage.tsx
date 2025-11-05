@@ -35,6 +35,57 @@ const AboutPage: React.FC<PageProps> = ({ setCurrentPage }) => {
             </div>
           </div>
         </div>
+        
+        <div className="mb-16">
+          <div className="grid md:grid-cols-1 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Do</h2>
+              <p className="text-gray-600 mb-4">
+                <b>WORKING CAPABILITY:</b> We have broad experience and have the capability of Civil Structure & Infrastructure, Soil
+                Investigation, Power Transmission & Distribution, Fabrication, Supervision, and Monitoring &
+                Evaluation with the site solution of different areas including especially Oil, Gas, Power and
+                Industrial Buildings. To attain our objectives, we have our own engineering, Fabrication with
+                the integral capability to having unparalleled value to our clients, customers & partners. We
+                have a clear vision of what we want to be - leaders in infrastructure development; and we guide
+                our business using five core values - lead, grow, deliver, sustain and protect.
+              </p>
+              <p className="text-gray-600 mb-4">
+                <b>CIVIL AND INDUSTRIAL BUILDINGS:</b> SSS Soil Engineer’s is known as the leading company in the execution of highly innovative and
+                architecturally significant projects, and as a key player in the civil and industrial buildings
+                sector. The company boasts in-depth knowledge of all areas of specialization in these sectors
+                including mosque, hotel accommodation, the service sector, commercial space, hospitals,
+                residential building, recovery of environmental assets and restoration.
+              </p>
+              <p className="text-gray-600 mb-4">
+                <b>LAND SURVEYING & TOPOGRAPHY:</b> SSS Soil Engineer’s has its own team of qualified surveyors who are fully equipped with total
+                stations, dumpy levels, civil structure& Infrastructure. We have undertaken projects ranging
+                from residential buildings to large scale farms and road surveys & Soil Survey.
+                MACHINERY AND EQUIPMENT:
+                We have an extensive fleet of machinery and equipment including the following: Compact
+                Machine, Excavator Machine, Grinding Machine, Piling Machine, Mixture machine, Steel & Rod
+                Cutting Machine, Grinding Machine, TLB’s Bulldozers, Graders and Rollers Low Bed trucks,
+                Crew Trucks / Small Tippers Crane Trucks, Transit Mixers, Concrete Batching Plant and
+                Comprehensive range of small plant.
+              </p>
+              <p className="text-gray-600 mb-4">
+                <b>CONCRETE CONSTRUCTION:</b> The Company has proven expertise relating to the engineering, design and fabrication of
+                concrete structures required by its industrial customers. With years of successful project
+                experience, SSS Soil Engineer’s capabilities are the best. SSS Soil Engineer’s has earned a
+                reputation for completing work on time and within budget and continues to expand its client
+                base in the field of civil construction.
+              </p>
+              <p className="text-gray-600 mb-4">
+                <b>DESIGN BUILD:</b> Design Build construction forms a significant portion of our work. By reducing our customer’s
+                dependence on multiple vendors, including designers and engineers, SSS Soil Engineer’s has
+                earned a reputation as a reliable, one-stop shopping, supplier of building space and structural
+                concrete.
+              </p>
+            </div>
+            {/* <div className="bg-gray-200 h-80 rounded-lg bg-cover bg-center"
+                 style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600)' }}>
+            </div> */}
+          </div>
+        </div>
 
         {/* Mission & Vision */}
         <div className="mb-16 grid md:grid-cols-2 gap-8">
