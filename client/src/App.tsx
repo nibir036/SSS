@@ -10,18 +10,46 @@ import ConstructionPage from './pages/ConstructionPage';
 import ImportsPage from './pages/ImportsPage';
 import ExportsPage from './pages/ExportsPage';
 import CustomisedImportsPage from './pages/CustomisedImportsPage';
+import ProjectsPage from './pages/ProjectsPage';
 import Footer from './components/Footer';
 import ProductModal from './components/ProductModal';
+import ProjectModal from './components/ProjectModal';
+import WhatsAppFloat from './components/WhatsAppFloat';
 import { Product, ProductsData } from './types';
 import { fallbackProductsData } from './data/fallbackData';
+
+// Project interface for modal
+interface Project {
+  id: number;
+  title: string;
+  status: 'ongoing' | 'completed';
+  description: string;
+  location: string;
+  startDate: string;
+  completionDate?: string;
+  images: string[];
+  client?: string;
+  scope?: string[];
+  budget?: string;
+  team?: string;
+  challenges?: string;
+  solution?: string;
+  outcome?: string;
+}
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsData, setProductsData] = useState<ProductsData>(fallbackProductsData);
   const [loading, setLoading] = useState(false);
+  
+  // Product Modal State
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isProductModalOpen, setIsProductModalOpen] = useState(false);
+  
+  // Project Modal State
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
   // Scroll to top when page changes
   useEffect(() => {
@@ -60,7 +88,6 @@ const App: React.FC = () => {
       } catch (error) {
         console.error('❌ Backend fetch failed:', error);
         console.log('📄 Using fallback data...');
-        // Keep using fallback data
         setProductsData(fallbackProductsData);
       } finally {
         setLoading(false);
@@ -70,14 +97,26 @@ const App: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const openModal = (product: Product) => {
+  // Product Modal Functions
+  const openProductModal = (product: Product) => {
     setSelectedProduct(product);
-    setIsModalOpen(true);
+    setIsProductModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeProductModal = () => {
+    setIsProductModalOpen(false);
     setSelectedProduct(null);
+  };
+
+  // Project Modal Functions
+  const openProjectModal = (project: Project) => {
+    setSelectedProject(project);
+    setIsProjectModalOpen(true);
+  };
+
+  const closeProjectModal = () => {
+    setIsProjectModalOpen(false);
+    setSelectedProject(null);
   };
 
   const renderCurrentPage = () => {
@@ -85,7 +124,7 @@ const App: React.FC = () => {
       setCurrentPage,
       productsData,
       loading,
-      openModal
+      openModal: openProductModal
     };
 
     switch (currentPage) {
@@ -112,6 +151,10 @@ const App: React.FC = () => {
       case 'customised-imports':
         return <CustomisedImportsPage setCurrentPage={setCurrentPage} />;
       
+      // Projects Page
+      case 'projects':
+        return <ProjectsPage setCurrentPage={setCurrentPage} onProjectClick={openProjectModal} />;
+      
       default: 
         return <HomePage {...commonProps} />;
     }
@@ -130,12 +173,24 @@ const App: React.FC = () => {
       </main>
       <Footer setCurrentPage={setCurrentPage} />
       
+      {/* Product Modal */}
       <ProductModal 
         product={selectedProduct}
-        isOpen={isModalOpen}
-        onClose={closeModal}
+        isOpen={isProductModalOpen}
+        onClose={closeProductModal}
         setCurrentPage={setCurrentPage}
       />
+
+      {/* Project Modal */}
+      <ProjectModal 
+        project={selectedProject}
+        isOpen={isProjectModalOpen}
+        onClose={closeProjectModal}
+        setCurrentPage={setCurrentPage}
+      />
+
+      {/* WhatsApp Floating Button */}
+      <WhatsAppFloat />
     </div>
   );
 };

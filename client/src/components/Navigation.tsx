@@ -15,21 +15,15 @@ const Navigation: React.FC<NavigationProps> = ({
   setIsMenuOpen
 }) => {
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [projectsOpen, setProjectsOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
   
   const servicesRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
         setServicesOpen(false);
-      }
-      if (projectsRef.current && !projectsRef.current.contains(event.target as Node)) {
-        setProjectsOpen(false);
       }
     };
 
@@ -49,13 +43,6 @@ const Navigation: React.FC<NavigationProps> = ({
     setCurrentPage(serviceId);
     setServicesOpen(false);
     setMobileServicesOpen(false);
-    setIsMenuOpen(false);
-  };
-
-  const handleProjectClick = (projectId: string) => {
-    setCurrentPage(projectId);
-    setProjectsOpen(false);
-    setMobileProjectsOpen(false);
     setIsMenuOpen(false);
   };
 
@@ -125,28 +112,17 @@ const Navigation: React.FC<NavigationProps> = ({
               )}
             </div>
 
-            {/* Our Projects Dropdown */}
-            <div className="relative" ref={projectsRef}>
-              <button
-                onClick={() => setProjectsOpen(!projectsOpen)}
-                className={`flex items-center space-x-1 font-medium transition-colors ${
-                  currentPage === 'projects'
-                    ? 'text-blue-600 border-b-2 border-blue-600' 
-                    : 'text-gray-700 hover:text-blue-600'
-                }`}
-              >
-                <span>Our Projects</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${projectsOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {projectsOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 animate-fade-in">
-                  <div className="px-4 py-3 text-gray-500 text-sm italic">
-                    Coming soon...
-                  </div>
-                </div>
-              )}
-            </div>
+            {/* Our Projects - Now a regular link */}
+            <button
+              onClick={() => setCurrentPage('projects')}
+              className={`capitalize font-medium transition-colors ${
+                currentPage === 'projects'
+                  ? 'text-blue-600 border-b-2 border-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
+              Our Projects
+            </button>
 
             <button
               onClick={() => setCurrentPage('certifications')}
@@ -225,22 +201,12 @@ const Navigation: React.FC<NavigationProps> = ({
             </div>
 
             {/* Mobile Our Projects */}
-            <div>
-              <button
-                onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-                className="flex items-center justify-between w-full text-left py-2 text-gray-700 hover:text-blue-600"
-              >
-                <span>Our Projects</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileProjectsOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {mobileProjectsOpen && (
-                <div className="pl-4">
-                  <div className="py-2 text-sm text-gray-500 italic">
-                    Coming soon...
-                  </div>
-                </div>
-              )}
-            </div>
+            <button
+              onClick={() => { setCurrentPage('projects'); setIsMenuOpen(false); }}
+              className="block w-full text-left py-2 capitalize text-gray-700 hover:text-blue-600"
+            >
+              Our Projects
+            </button>
 
             <button
               onClick={() => { setCurrentPage('certifications'); setIsMenuOpen(false); }}
