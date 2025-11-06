@@ -31,30 +31,16 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ setCurrentPage, onProjectCl
   const projects: Project[] = [
     {
       id: 1,
-      title: "Fuel Treatment Plant Construction",
+      title: "School Building Construction",
       status: "completed",
-      description: "Successfully completed construction of a state-of-the-art fuel treatment facility with advanced processing capabilities.",
-      location: "Dhaka, Bangladesh",
-      startDate: "Jan 2023",
-      completionDate: "Dec 2023",
-      client: "National Oil Corporation",
-      budget: "$5.2 Million",
-      team: "50+ Engineers and Technicians",
-      scope: [
-        "Design and construction of fuel processing units",
-        "Installation of advanced filtration systems",
-        "Implementation of safety and environmental controls",
-        "Integration of automated monitoring systems",
-        "Staff training and operational handover"
-      ],
-      challenges: "The project involved complex engineering solutions and strict adherence to environmental standards. Managing the installation of sensitive equipment while maintaining operational safety was a significant challenge.",
-      solution: "We implemented a phased construction approach with rigorous safety protocols. Our team utilized advanced project management tools and maintained constant communication with stakeholders to ensure seamless coordination.",
-      outcome: "The facility was delivered on time and within budget, exceeding all environmental and safety standards. The plant now processes 10,000 barrels per day with 99.9% efficiency and zero environmental incidents since commissioning.",
+      description: "Successfully completed construction of a three storied school building with modern facilities and sustainable design.",
+      location: "Kaliakoir, Gazipur, Bangladesh",
+      startDate: "Oct 2019",
+      client: "Summit Gazipur II Power Ltd.",
+      budget: "$0.5 Million",
+      team: "100+ Engineers and Technicians",
       images: [
-        "/construction/image1.jpg",
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800",
-        "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+        "/construction/image17.png",
       ]
     },
     {
@@ -68,16 +54,6 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ setCurrentPage, onProjectCl
       client: "Chittagong Port Authority",
       budget: "$3.8 Million",
       team: "40+ Specialists",
-      scope: [
-        "Construction of 8 large-capacity storage tanks",
-        "Installation of integrated piping network",
-        "Fire suppression and safety systems",
-        "Loading and unloading facilities",
-        "Environmental containment systems"
-      ],
-      challenges: "Working in a live port environment required careful coordination with ongoing operations. Weather conditions and soil stability also posed significant challenges.",
-      solution: "Our team developed a detailed logistics plan that minimized disruption to port operations. We utilized specialized equipment and techniques to ensure structural integrity despite challenging soil conditions.",
-      outcome: "Project delivered on time with zero safety incidents. The tank farm now provides 50,000 cubic meters of storage capacity and has improved port efficiency by 35%.",
       images: [
         "/construction/image2.jpg",
         "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800",
@@ -90,83 +66,48 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ setCurrentPage, onProjectCl
       title: "Modern Mosque Construction",
       status: "completed",
       description: "Beautiful mosque construction featuring traditional Islamic architecture combined with modern construction techniques.",
-      location: "Dhaka, Bangladesh",
+      location: "Aricha, Dhaka, Bangladesh",
       startDate: "Jun 2022",
       completionDate: "Aug 2023",
-      client: "Community Development Board",
-      budget: "$2.5 Million",
-      team: "35+ Craftsmen and Engineers",
-      scope: [
-        "Main prayer hall with capacity for 2,000 worshippers",
-        "Separate prayer area for women",
-        "Modern ablution facilities",
-        "Community center and library",
-        "Minaret and dome construction",
-        "Landscaping and parking facilities"
-      ],
-      challenges: "Balancing traditional architectural aesthetics with modern building codes and ensuring acoustic excellence for the prayer hall required specialized expertise.",
-      solution: "We collaborated with Islamic architecture specialists and acoustic engineers to create a design that honors tradition while incorporating modern safety and comfort features.",
-      outcome: "The mosque has become a landmark in the community, serving over 5,000 worshippers weekly. The project received recognition for its architectural beauty and structural excellence.",
+      client: "Power Grid Company of Bangladesh Ltd.",
+      budget: "$0.22 Million",
+      team: "50+ Craftsmen and Engineers",
       images: [
         "/construction/image3.jpg",
-        "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800",
-        "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800",
-        "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800"
       ]
     },
     {
       id: 4,
-      title: "Jetty Construction Project",
+      title: "Construction of Open Store Yard",
       status: "ongoing",
-      description: "Major marine infrastructure project involving the construction of a commercial jetty for cargo operations.",
-      location: "Mongla Port, Bangladesh",
-      startDate: "Oct 2023",
-      client: "Mongla Port Authority",
-      budget: "$8.5 Million",
-      team: "80+ Marine Engineers and Workers",
-      scope: [
-        "Deep water berth construction (250m length)",
-        "Heavy-duty cargo handling equipment installation",
-        "Approach road and rail connectivity",
-        "Navigation and lighting systems",
-        "Environmental protection measures"
-      ],
-      challenges: "Marine construction in tidal waters with varying depths, protection against cyclonic conditions, and maintaining navigation safety during construction are key challenges.",
-      solution: "Utilizing advanced marine engineering techniques and specialized equipment designed for tidal environments. Implementation of real-time monitoring systems for construction quality and safety.",
-      outcome: "Currently 65% complete. Upon completion, the jetty will handle 2 million tons of cargo annually and create 500+ jobs.",
+      description: "Major infrastructure project involving the construction of a substation for powergrid.",
+      location: "Kalikair, Gazipur",
+      startDate: "Nov 2024",
+      client: "Power Grid Company of Bangladesh Ltd.",
+      budget: "$0.2 Million",
+      team: "80+ Engineers and Workers",
       images: [
-        "/construction/image4.jpg",
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800",
-        "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=800",
-        "https://images.unsplash.com/photo-1519489892867-9c0d019f1032?w=800"
+        "/construction/image9.jpg",
+        "/construction/image10.jpg",
+        "/construction/image11.jpg",
+        "/construction/image13.png",
+        "/construction/image12.jpg"
       ]
     },
     {
       id: 5,
-      title: "Highway Road Construction",
+      title: "Rerouting Work of 230kv Transmission Line",
       status: "ongoing",
-      description: "Extensive highway construction project connecting major urban centers with modern infrastructure.",
-      location: "Dhaka-Chittagong Highway",
-      startDate: "Jan 2024",
-      client: "Roads and Highways Department",
-      budget: "$12 Million",
+      description: "Comprehensive rerouting and realignment of a 230kV high-voltage transmission line to ensure optimal power distribution and infrastructure reliability.",
+      location: "Aminbazar-Kaliakoir, Ghorashal-Ishwardi, Dhaka-Ashulia",
+      startDate: "Oct 2023",
+      client: "Power Grid Company of Bangladesh Ltd.",
+      budget: "$22.5 Million",
       team: "120+ Engineers and Workers",
-      scope: [
-        "25km four-lane highway construction",
-        "Bridge and overpass structures",
-        "Advanced drainage systems",
-        "Road safety features and signage",
-        "Rest areas and toll facilities",
-        "Smart traffic management systems"
-      ],
-      challenges: "Managing construction across varied terrain, ensuring minimal disruption to existing traffic, and meeting strict quality standards for high-speed highway construction.",
-      solution: "Phased construction approach with temporary diversions, use of modern machinery for rapid construction, and round-the-clock quality monitoring.",
-      outcome: "Currently 40% complete. Expected to reduce travel time by 45 minutes and improve connectivity between two major economic hubs.",
       images: [
-        "/construction/image5.jpg",
-        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800",
-        "https://images.unsplash.com/photo-1621544402532-1f47c2f5e5e7?w=800",
-        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800"
+        "/construction/image14.png",
+        "/construction/image15.png",
+       "/construction/image16.png",
       ]
     },
     {
