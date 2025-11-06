@@ -38,7 +38,10 @@ interface Project {
 }
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState('home');
+  // Initialize currentPage from localStorage or default to 'home'
+  const [currentPage, setCurrentPage] = useState(() => {
+    return localStorage.getItem('currentPage') || 'home';
+  });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsData, setProductsData] = useState<ProductsData>(fallbackProductsData);
   const [loading, setLoading] = useState(false);
@@ -50,6 +53,11 @@ const App: React.FC = () => {
   // Project Modal State
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+
+  // Save currentPage to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('currentPage', currentPage);
+  }, [currentPage]);
 
   // Scroll to top when page changes
   useEffect(() => {
